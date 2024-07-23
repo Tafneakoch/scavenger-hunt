@@ -1,30 +1,24 @@
-function checkAnswers() {
-    const answers = {
-        answer1: 'São Caetano do Sul',
-        answer2: 'Rhythmic Gymnastics',
-        answer3: 'Advertising & Marketing, Graphic Designer',
-        answer4: 'Ireland',
-        answer5: '3',
-        answer6: 'Excited to join the Pear team!',
-    };
-
-    let resultText = 'You got the following answers right: ';
-    let allCorrect = true;
-
-    for (let key in answers) {
-        const userAnswer = document.getElementById(key).value.trim();
-        if (userAnswer === answers[key]) {
-            resultText += `${key.replace('answer', '')} `;
-        } else {
-            allCorrect = false;
-        }
-    }
-
-    if (allCorrect) {
-        resultText = 'Congratulations! You have completed the scavenger hunt.';
-    } else {
-        resultText = 'Some answers are incorrect. Please try again.';
-    }
-
-    document.getElementById('result').innerText = resultText;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .question { margin: 20px 0; }
+        .answer { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Scavenger Hunt!</h1>
+    <div id="clue1" class="question">
+        <p>1. Find out where our new team member’s journey began! Look for a city known for its innovation and proximity to São Paulo.</p>
+        <input type="text" id="answer1" class="answer">
+    </div>
+    <!-- More clues here -->
+    <button onclick="checkAnswers()">Submit</button>
+    <p id="result"></p>
+    <script src="script.js"></script>
+</body>
+</html>
